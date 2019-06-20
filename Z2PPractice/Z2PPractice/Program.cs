@@ -6,26 +6,20 @@ namespace Z2PPractice
     {
         static void Main(string[] args)
         {
-            IAnimal myAnimal;
+            Dog myDog = new Dog();
+            myDog.Name = "Bob";
+            myDog.NumberOfLegs = 4;
+            myDog.Bark();
 
-            Console.WriteLine("What animal are you?");
-            string input = Console.ReadLine();
+            Lab myLab = new Lab();
+            myLab.Bark();
+            myLab.Name = "Lassie";
 
-            if(input == "Dog")
-            {
-                myAnimal = new Dog();
-            }
-            else
-            {
-                myAnimal = new Animal();
-            }
-
-            myAnimal.Name = "Jessica";
-            myAnimal.Breathe();
+            Console.WriteLine(myDog.Name);
         }
     }
 
-    class Animal : IAnimal
+    class Animal
     {
         public string Name { get; set; }
         public string Color { get; set; }
@@ -34,22 +28,24 @@ namespace Z2PPractice
         {
             Console.WriteLine("I'm breathing");
         }
-    }
 
-    class Dog : IAnimal
-    {
-        public string Name { get; set; }
-
-        public void Breathe()
+        public void Eat()
         {
-            Console.WriteLine("I'm a dog breathing");
+
         }
     }
 
-    interface IAnimal
+    class Dog : Animal
     {
-        string Name { get; set; }
+        public int NumberOfLegs { get; set; }
+        public void Bark()
+        {
+            Console.WriteLine("Woof woof!");
+        }
+    }
 
-        void Breathe();        
+    class Lab : Dog
+    {
+
     }
 }
