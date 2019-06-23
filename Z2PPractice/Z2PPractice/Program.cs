@@ -7,19 +7,14 @@ namespace Z2PPractice
         static void Main(string[] args)
         {
             Dog myDog = new Dog();
-            myDog.Name = "Bob";
-            myDog.NumberOfLegs = 4;
             myDog.Bark();
 
-            Lab myLab = new Lab();
-            myLab.Bark();
-            myLab.Name = "Lassie";
-
-            Console.WriteLine(myDog.Name);
+            Fish myFish = new Fish();
+            myFish.Name = "Bob";
         }
     }
 
-    class Animal
+    abstract class Animal
     {
         public string Name { get; set; }
         public string Color { get; set; }
@@ -31,21 +26,21 @@ namespace Z2PPractice
 
         public void Eat()
         {
-
+            Console.WriteLine("I'm eating");
         }
     }
 
     class Dog : Animal
     {
         public int NumberOfLegs { get; set; }
+
         public void Bark()
         {
             Console.WriteLine("Woof woof!");
         }
     }
 
-    class Lab : Dog
-    {
+    class Fish : Animal { 
 
     }
 }
