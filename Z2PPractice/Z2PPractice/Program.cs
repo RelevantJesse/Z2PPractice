@@ -6,41 +6,25 @@ namespace Z2PPractice
     {
         static void Main(string[] args)
         {
-            Dog myDog = new Dog();
-            myDog.Bark();
-
-            Fish myFish = new Fish();
-            myFish.Name = "Bob";
+            Console.WriteLine(Math.Add(1, "hello"));
         }
     }
 
-    abstract class Animal
+    static class Math
     {
-        public string Name { get; set; }
-        public string Color { get; set; }
-
-        public void Breathe()
+        public static int Add(int a, int b)
         {
-            Console.WriteLine("I'm breathing");
+            return a + b;
         }
 
-        public void Eat()
+        public static int Add(int a, string b)
         {
-            Console.WriteLine("I'm eating");
+            return a;
         }
-    }
 
-    class Dog : Animal
-    {
-        public int NumberOfLegs { get; set; }
-
-        public void Bark()
+        public static int Add(string b, int a)
         {
-            Console.WriteLine("Woof woof!");
+            return a;
         }
-    }
-
-    class Fish : Animal { 
-
     }
 }
